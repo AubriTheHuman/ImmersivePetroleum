@@ -212,6 +212,7 @@ public class HydrotreaterTileEntity extends PoweredMultiblockTileEntity<Hydrotre
 	
 	@Override
 	public void tick(){
+		super.tick();
 		checkForNeedlessTicking();
 		
 		if(this.world.isRemote || isDummy() || isRSDisabled()){
@@ -252,7 +253,6 @@ public class HydrotreaterTileEntity extends PoweredMultiblockTileEntity<Hydrotre
 			update = true;
 		}
 		
-		super.tick();
 		
 		if(this.tanks[TANK_OUTPUT].getFluidAmount() > 0){
 			BlockPos outPos = getBlockPosForPos(Fluid_OUT).up();
