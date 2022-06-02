@@ -58,7 +58,12 @@ public class PumpjackLubricationHandler implements ILubricationHandler<PumpjackT
 	}
 	
 	@Override
-	public void lubricate(World world, int ticks, PumpjackTileEntity mbte){
+	public void lubricate(World world, int ticks, PumpjackTileEntity mbte) {
+		lubricate(world, ticks, mbte, null);
+	}
+	
+	@Override
+	public void lubricate(World world, int ticks, PumpjackTileEntity mbte, AutoLubricatorTileEntity lubricator){
 		if(!world.isRemote){
 			if(ticks % 4 == 0){
 				mbte.tick();
