@@ -33,6 +33,7 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.fluids.FluidStack;
 
 public class LubricatedHandler{
 	public interface ILubricationHandler<E extends TileEntity> {
@@ -46,7 +47,7 @@ public class LubricatedHandler{
 		
 		void lubricate(World world, int ticks, E mbte);
 		
-		void lubricate(World world, int ticks, E mbte, AutoLubricatorTileEntity lubricator);
+		void lubricate(World world, int ticks, E mbte, FluidStack lubrication);
 		
 		@OnlyIn(Dist.CLIENT)
 		void renderPipes(AutoLubricatorTileEntity lubricator, E mbte, MatrixStack matrix, IRenderTypeBuffer buffer, int combinedLight, int combinedOverlay);
