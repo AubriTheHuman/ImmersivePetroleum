@@ -213,7 +213,6 @@ public class HydrotreaterTileEntity extends PoweredMultiblockTileEntity<Hydrotre
 	@Override
 	public void tick(){
 		super.tick();
-		checkForNeedlessTicking();
 		
 		if(this.world.isRemote || isDummy() || isRSDisabled()){
 			return;
